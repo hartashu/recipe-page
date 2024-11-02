@@ -75,6 +75,7 @@ body {
   background-color: var(--color-stone-100);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 
   padding: var(--spacing-128px) var(--spacing-48px);
@@ -164,8 +165,10 @@ body {
   margin-bottom: 0;
 }
 
-.recipe-container hr {
-  border-color: var(--color-stone-150);
+.recipe-container .recipe-description hr {
+  height: 1px;
+  background-color: var(--color-stone-150);
+  border: none;
 }
 
 .instructions-container h2 {
