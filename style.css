@@ -139,7 +139,7 @@ body {
 }
 
 .preparation-container ul li::marker {
-  color: var(--color-rose-800);
+  color: var(--color-brown-800);
 }
 
 .preparation-container ul li span {
@@ -183,10 +183,16 @@ body {
 .instructions-container ol li {
   color: var(--color-stone-600);
   margin-bottom: var(--spacing-8px);
+  padding-left: var(--spacing-16px);
 }
 
 .instructions-container ol li:last-child {
   margin-bottom: 0;
+}
+
+.instructions-container ol li::marker {
+  color: var(--color-brown-800);
+  font-weight: 700;
 }
 
 .instructions-container ol li span {
