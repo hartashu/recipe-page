@@ -287,7 +287,13 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--clr-brown-800);
 }
 
-.l-list-gap {
+.u-hr-color {
+  height: 1px;
+  background-color: var(--clr-stone-150);
+  border: none;
+}
+
+.u-list-gap {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
