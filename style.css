@@ -146,6 +146,14 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 1rem;
 }
 
+.c-article__ins-item::marker {
+  color: var(--clr-brown-800);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-bold);
+  font-size: 1rem;
+  line-height: 150%;
+}
+
 .c-article__nutrition {
   display: flex;
   flex-direction: column;
@@ -211,7 +219,7 @@ h1, h2, h3, h4, h5, h6 {
   .page {
     display: grid;
     place-content: center;
-    padding: 128px 48px;
+    padding: 8em 3em;
   }
 
   .c-article {
