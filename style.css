@@ -4,293 +4,281 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap');
 
 :root {
-  --color-white: hsl(0, 0%, 100%);
-  --color-stone-100: hsl(30, 54%, 90%);
-  --color-stone-150: hsl(30, 18%, 87%);
-  --color-stone-600: hsl(30, 10%, 34%);
-  --color-stone-900: hsl(24, 5%, 18%);
-  --color-brown-800: hsl(14, 45%, 36%);
-  --color-rose-800: hsl(332, 51%, 32%);
-  --color-rose-50: hsl(330, 100%, 98%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-stone-100: hsl(30, 54%, 90%);
+  --clr-stone-150: hsl(30, 18%, 87%);
+  --clr-stone-600: hsl(30, 10%, 34%);
+  --clr-stone-900: hsl(24, 5%, 18%);
+  --clr-brown-800: hsl(14, 45%, 36%);
+  --clr-rose-800: hsl(332, 51%, 32%);
+  --clr-rose-50: hsl(330, 100%, 98%);
 
-  --spacing-128px: 128px;
-  --spacing-48px: 48px;
-  --spacing-40px: 40px;
-  --spacing-32px: 32px;
-  --spacing-24px: 24px;
-  --spacing-16px: 16px;
-  --spacing-12px: 12px;
-  --spacing-8px: 8px;
+  --ff-title: "Young Serif", serif;
+  --ff-base: "Outfit", sans-serif;
+
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
 }
 
-.text-preset-1,
-.text-preset-2,
-.text-preset-3 {
-  line-height: 100%;
-  letter-spacing: 0px;
-}
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
 
-.text-preset-4,
-.text-preset-4-bold {
-  line-height: 150%;
-  letter-spacing: 0px;
-}
-
-.text-preset-1 {
-  font-family: "Young Serif";
-  font-weight: 400;
-  font-size: 40px;
-}
-
-.text-preset-2 {
-  font-family: "Young Serif";
-  font-weight: 400;
-  font-size: 28px;
-}
-
-.text-preset-3 {
-  font-family: Outfit;
-  font-weight: 600;
-  font-size: 20px;
-}
-
-.text-preset-4,
-.text-preset-4-bold {
-  font-family: Outfit;
-  font-weight: 400;
-  font-size: 16px;
-}
-
-.text-preset-4-bold {
-  font-weight: 700;
-}
-
-*,
-*::after,
-*::before {
+*, *::before, *::after {
   box-sizing: border-box;
+}
+
+* {
   padding: 0;
   margin: 0;
 }
 
 body {
-  background-color: var(--color-stone-100);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+} */
+
+#root, #__next {
+  isolation: isolate;
+}
+
+/* 
+  CSS
+*/
+
+.page {
+  background-color: var(--clr-stone-100);
+  font-family: var(--ff-base);
+}
+
+.c-article {
+  --article-text-spacing: 2rem;
+  --article-text-padding-vertical: 2.5rem;
+  --article-text-padding-horizontal: 2rem;
+
+  --article-prep-padding: 1.5rem;
+
+  background-color: var(--clr-white);
+}
+
+.c-article__text {
+  padding: var(--article-text-padding-vertical) var(--article-text-padding-horizontal);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  padding: var(--spacing-128px) var(--spacing-48px);
+  gap: var(--article-text-spacing);
 }
 
-.recipe-container {
-  background-color: var(--color-white);
-  width: 736px;
-  border-radius: 24px;
-  padding: var(--spacing-40px);
-  border: none;
+.c-article__title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.recipe-container .recipe-description div,
-.recipe-container .recipe-description hr {
-  margin-bottom: var(--spacing-32px);
+.c-article__prep {
+  background-color: var(--clr-rose-50);
+  padding: var(--article-prep-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.recipe-container div:last-child {
-  margin-bottom: 0;
+.c-article__prep-list {
+  margin-left: var(--article-prep-padding);
 }
 
-.recipe-container .recipe-description hr {
-  height: 1px;
-  background-color: var(--color-stone-150);
-  border: none;
+.c-article__prep-item {
+  padding-left: 1rem;
 }
 
-.recipe-picture-container img {
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 12px;
-  margin-bottom: var(--spacing-40px);
+.c-article__prep-item::marker {
+  color: var(--clr-rose-800);
 }
 
-.title-container h1 {
-  color: var(--color-stone-900);
-  margin-bottom: var(--spacing-24px);
+.c-article__ing {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.title-container p {
-  color: var(--color-stone-600);
+/* margin still not proper set yet */
+.c-article__ing-list {
+  margin-left: 24px;
 }
 
-.preparation-container {
-  background-color: var(--color-rose-50);
-  padding: var(--spacing-24px);
+.c-article__ing-item {
+  padding-left: 1rem;
 }
 
-.preparation-container h2 {
-  color: var(--color-rose-800);
-  margin-bottom: var(--spacing-16px);
+.c-article__ins {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.preparation-container ul {
-  margin-left: var(--spacing-24px);
+/* margin still not proper set yet */
+.c-article__ins-list {
+  margin-left: 24px;
 }
 
-.preparation-container ul li {
-  color: var(--color-stone-600);
-  padding-left: var(--spacing-16px);
-  margin-bottom: var(--spacing-8px);
+.c-article__ins-item {
+  padding-left: 1rem;
 }
 
-.preparation-container ul li:last-child {
-  margin-bottom: 0;
+.c-article__nutrition {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.preparation-container ul li::marker {
-  color: var(--color-brown-800);
-}
+/* Using separate to add spacing, but can not add table line */
+/* .c-article__nutrition-table {
+  border-collapse: separate;
+  border-spacing: 32px 12px;
+} */
 
-.preparation-container ul li span {
-  font-weight: 700;
-}
-
-.ingredients-container h2 {
-  color: var(--color-brown-800);
-  margin-bottom: var(--spacing-24px);
-}
-
-.ingredients-container ul {
-  color: var(--color-stone-600);
-  margin-left: var(--spacing-24px);
-}
-
-.ingredients-container li {
-  padding-left: var(--spacing-16px);
-  margin-bottom: var(--spacing-8px);
-}
-
-.ingredients-container li:last-child {
-  margin-bottom: 0;
-}
-
-.instructions-container h2 {
-  color: var(--color-brown-800);
-  margin-bottom: var(--spacing-24px);
-}
-
-.instructions-container ol {
-  margin-left: var(--spacing-24px);
-}
-
-.instructions-container ol li {
-  color: var(--color-stone-600);
-  margin-bottom: var(--spacing-8px);
-  padding-left: var(--spacing-16px);
-}
-
-.instructions-container ol li:last-child {
-  margin-bottom: 0;
-}
-
-.instructions-container ol li::marker {
-  color: var(--color-brown-800);
-  font-weight: 700;
-}
-
-.instructions-container ol li span {
-  font-weight: 700;
-}
-
-.nutrition-container h2 {
-  color: var(--color-brown-800);
-  margin-bottom: var(--spacing-24px);
-}
-
-.nutrition-container p {
-  color: var(--color-stone-600);
-  margin-bottom: var(--spacing-24px);
-}
-
-.nutrition-table {
-  width: 100%;
+.c-article__nutrition-table {
   border-collapse: collapse;
 }
 
-.nutrition-table tbody tr {
-  border-bottom: 1px solid var(--color-stone-150);
-
+.c-article__nutrition-table-tr {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: var(--spacing-16px);
+  column-gap: 1rem;
+  padding: 0.75rem 2rem;
 
-  padding: var(--spacing-12px) var(--spacing-32px);
+  border-bottom: 1px solid var(--clr-stone-150);
 }
 
-.nutrition-table tbody tr:first-child {
+.c-article__nutrition-table-tr:first-child {
   padding-top: 0;
 }
 
-.nutrition-table tbody tr:last-child {
+.c-article__nutrition-table-tr:last-child {
   padding-bottom: 0;
   border-bottom: none;
 }
 
-.nutrition-table tbody tr td:nth-child(odd) {
-  color: var(--color-stone-600);
-  font-family: Outfit;
-  font-weight: 400;
-  font-size: 16px;
+.c-article__nutrition-table-tr > *:first-child {
+  color: var(--clr-stone-600);
+}
+
+.c-article__nutrition-table-tr > *:last-child {
+  color: var(--clr-brown-800);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-bold);
+  font-size: 1rem;
   line-height: 150%;
-  letter-spacing: 0px;
 }
 
-.nutrition-table tbody tr td:nth-child(even) {
-  color: var(--color-brown-800);
-  font-family: Outfit;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: 0px;
-}
-
-footer {
-  position: relative;
-  top: 1rem;
-}
-
-.attribution {
+.c-attribution {
+  width: 100%;
   font-size: 11px;
   text-align: center;
+  position: relative;
+
+  @media screen and (min-width: 48em) {
+    display: none;
+  }
 }
 
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
 
-@media (max-width: 768px) {
-  .recipe-container {
-    width: 100%;
+@media screen and (min-width: 48em) {
+  .page {
+    display: grid;
+    place-content: center;
+    padding: 128px 48px;
+  }
+
+  .c-article {
+    max-width: 736px;
+    border-radius: 1.5rem;
+  }
+
+  .c-article__media {
+    border-radius: 0.75rem;
+    margin: 40px;
+    margin-bottom: 0;
+    overflow: hidden;
   }
 }
 
-@media (max-width: 375px) {
-  body {
-    padding: 0;
-  }
-  
-  .recipe-container {
-    width: 100%;
-    border-radius: 0;
-    padding: 0;
-  }
+/* 
+  Utility classes.
+  Class name based on text preset and color in Figma.
+*/
 
-  .recipe-picture-container img {
-    border-radius: 0;
-  }
+.u-text-preset-1 {
+  font-family: var(--ff-title);
+  font-weight: var(--fw-regular);
+  font-size: 2.25rem;
+  line-height: 100%;
+}
 
-  .recipe-description {
-    margin: 0px var(--spacing-32px);
-    padding-bottom: var(--spacing-40px);
-  }
+.u-text-preset-2 {
+  font-family: var(--ff-title);
+  font-weight: var(--fw-regular);
+  font-size: 1.5rem;
+  line-height: 100%;
+}
+
+.u-text-preset-3 {
+  font-family: var(--ff-base);
+  font-weight: var(--fw-semi-bold);
+  font-size: 1.25rem;
+  line-height: 100%;
+}
+
+.u-text-preset-4 {
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  font-size: 1rem;
+  line-height: 150%;
+}
+
+.u-text-preset-4-bold {
+  font-family: var(--ff-base);
+  font-weight: var(--fw-bold);
+  font-size: 1rem;
+  line-height: 150%;
+}
+
+.u-font-color-stone-900 {
+  color: var(--clr-stone-900);
+}
+
+.u-font-color-stone-600 {
+  color: var(--clr-stone-600);
+}
+
+.u-font-color-rose-800 {
+  color: var(--clr-rose-800);
+}
+
+.u-font-color-brown-800 {
+  color: var(--clr-brown-800);
 }
