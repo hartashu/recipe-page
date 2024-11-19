@@ -219,7 +219,6 @@ h1, h2, h3, h4, h5, h6 {
 
 @media screen and (min-width: 48em) {
   .page {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
