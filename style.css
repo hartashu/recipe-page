@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* 
-  CSS
+  style
 */
 
 .page {
@@ -73,80 +73,81 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--ff-base);
 }
 
-.c-article {
-  --article-text-spacing: 2rem;
-  --article-text-padding-vertical: 2.5rem;
-  --article-text-padding-horizontal: 2rem;
+.c-content {
+  --content-text-spacing: 2rem;
+  --content-text-padding-vertical: 2.5rem;
+  --content-text-padding-horizontal: 2rem;
 
-  --article-prep-padding: 1.5rem;
+  --content-prep-padding: 1.5rem;
 
   background-color: var(--clr-white);
 }
 
-.c-article__text {
-  margin: var(--article-text-padding-vertical) var(--article-text-padding-horizontal);
+.c-content__text {
+  padding: var(--content-text-padding-vertical) var(--content-text-padding-horizontal);
   display: flex;
   flex-direction: column;
-  gap: var(--article-text-spacing);
+  gap: var(--content-text-spacing);
 }
 
-.c-article__title-group {
+.c-content__title-group {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.c-article__prep {
+.c-content__prep {
   background-color: var(--clr-rose-50);
-  padding: var(--article-prep-padding);
+  padding: var(--content-prep-padding);
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.c-article__prep-list {
-  margin-left: var(--article-prep-padding);
+/* margin still not set properly yet */
+.c-content__prep-list {
+  margin-left: var(--content-prep-padding);
 }
 
-.c-article__prep-item {
+.c-content__prep-item {
   padding-left: 1rem;
 }
 
-.c-article__prep-item::marker {
+.c-content__prep-item::marker {
   color: var(--clr-rose-800);
 }
 
-.c-article__ing {
+.c-content__ing {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-/* margin still not proper set yet */
-.c-article__ing-list {
+/* margin still not set properly yet */
+.c-content__ing-list {
   margin-left: 24px;
 }
 
-.c-article__ing-item {
+.c-content__ing-item {
   padding-left: 1rem;
 }
 
-.c-article__ins {
+.c-content__ins {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-/* margin still not proper set yet */
-.c-article__ins-list {
+/* margin still not set properly yet */
+.c-content__ins-list {
   margin-left: 24px;
 }
 
-.c-article__ins-item {
+.c-content__ins-item {
   padding-left: 1rem;
 }
 
-.c-article__ins-item::marker {
+.c-content__ins-item::marker {
   color: var(--clr-brown-800);
   font-family: var(--ff-base);
   font-weight: var(--fw-bold);
@@ -154,23 +155,23 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 150%;
 }
 
-.c-article__nutrition {
+.c-content__nutrition {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
 /* Using separate to add spacing, but can not add table line */
-/* .c-article__nutrition-table {
+/* .c-content__nutrition-table {
   border-collapse: separate;
   border-spacing: 32px 12px;
 } */
 
-.c-article__nutrition-table {
+.c-content__nutrition-table {
   border-collapse: collapse;
 }
 
-.c-article__nutrition-table-tr {
+.c-content__nutrition-table-tr {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 1rem;
@@ -179,20 +180,20 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid var(--clr-stone-150);
 }
 
-.c-article__nutrition-table-tr:first-child {
+.c-content__nutrition-table-tr:first-child {
   padding-top: 0;
 }
 
-.c-article__nutrition-table-tr:last-child {
+.c-content__nutrition-table-tr:last-child {
   padding-bottom: 0;
   border-bottom: none;
 }
 
-.c-article__nutrition-table-tr > *:first-child {
+.c-content__nutrition-table-tr > *:first-child {
   color: var(--clr-stone-600);
 }
 
-.c-article__nutrition-table-tr > *:last-child {
+.c-content__nutrition-table-tr > *:last-child {
   color: var(--clr-brown-800);
   font-family: var(--ff-base);
   font-weight: var(--fw-bold);
@@ -205,6 +206,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 11px;
   text-align: center;
   position: relative;
+  top: 1rem;
 
   @media screen and (min-width: 48em) {
     display: none;
@@ -217,25 +219,34 @@ h1, h2, h3, h4, h5, h6 {
 
 @media screen and (min-width: 48em) {
   .page {
-    display: grid;
-    place-content: center;
-    padding: 8em 3em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 128px 48px;
   }
 
-  .c-article {
-    max-width: 736px;
+  .c-content {
+    max-width: 616px;
     border-radius: 1.5rem;
   }
 
-  .c-article__media {
+  .c-content__media {
     border-radius: 0.75rem;
     margin: 40px;
     margin-bottom: 0;
     overflow: hidden;
   }
 
-  .c-article__text {
-    margin: 40px;
+  .c-content__text {
+    padding: 40px;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .c-content {
+    max-width: 736px;
   }
 }
 
@@ -247,7 +258,7 @@ h1, h2, h3, h4, h5, h6 {
 .u-text-preset-1 {
   font-family: var(--ff-title);
   font-weight: var(--fw-regular);
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   line-height: 100%;
 }
 
