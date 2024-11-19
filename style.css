@@ -101,6 +101,13 @@ h1, h2, h3, h4, h5, h6 {
   gap: 1.5rem;
 }
 
+.c-content__title {
+  font-family: var(--ff-title);
+  font-weight: var(--fw-regular);
+  font-size: 2.25rem;
+  line-height: 100%;
+}
+
 .c-content__prep {
   background-color: var(--clr-rose-50);
   padding: var(--content-prep-padding);
@@ -249,6 +256,10 @@ h1, h2, h3, h4, h5, h6 {
 
   .c-content__text {
     padding: 40px;
+  }
+
+  .c-content__title {
+    font-size: 2.5rem;
   }
 }
 
