@@ -86,6 +86,7 @@ h1, h2, h3, h4, h5, h6 {
 .c-content__img {
   width: 100%;
   height: 171px;
+  object-fit: cover;
 }
 
 .c-content__text {
@@ -230,22 +231,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media screen and (min-width: 48em) {
-  /* .page {
+  html {
+    height: 100%;
+  }
+
+  .page {
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 128px 48px;
-  }  */
+    /* padding: 128px 48px; */
+  } 
 
   .c-content {
     width: 616px;
     border-radius: 1.5rem;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
   }
 
   .c-content__media {
