@@ -232,10 +232,11 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (min-width: 48em) {
   .page {
     display: flex;
-    flex-direction: column;
+    height: 100vh;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
-    padding: 128px 48px;
+    /* padding: 128px 48px; */
   }
 
   .c-content {
@@ -266,6 +267,11 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (min-width: 90em) {
   .c-content {
     max-width: 736px;
+/* 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); */
   }
 }
 
